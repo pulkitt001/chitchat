@@ -2,7 +2,6 @@ import path from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
 
-// console.log('JWT_SECRET:', process.env.JWT_SECRET);
 import express from 'express';
 import cookieParser from 'cookie-parser';
 
@@ -29,6 +28,6 @@ app.get('*', (req, res) => {
 });
 
 server.listen(PORT, async () => {
-  await connectToMongoDB();
+  await connectToMongoDB(); // Ensure MongoDB is connected
   console.log(`Server Running on port ${PORT}`);
 });
